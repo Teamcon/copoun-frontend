@@ -1,20 +1,26 @@
-.container img {
+img {
     width: 200px;
     height: 200px;
     align-self: center;
+   
 
 }
 
 
-.container{
+.mycontainer{
+    display:inline-block;
+    flex-direction: row;
+    width: 300px;
+    height: auto;
     text-transform: capitalize;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
 }
-.container{
-    width: 300px;
-    direction:rtl;
+.line{   text-decoration: line-through;
 }
-.line{
-    text-decoration: line-through;
-}
+/* .card{
+    flex-direction:row-reverse;
+} */
+
+
 

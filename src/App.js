@@ -3,10 +3,13 @@ import { Route } from 'react-router-dom'
 import Offers from './components/offers/Offers'
 import data from './components/data/data'
 import './App.css';
+import './components/offers/style.css'
+import Search from './components/offers/Search'
 
 function App() {
   return (
     <div className="App">
+      <Search/><br/>
      <Route exact path='/' render={() => (
       <div>
         {data.data.map(offer => (

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import style from './style.css'
+import { Container, Row, Col } from 'reactstrap';
 
 
 class Offers extends Component {
     
     render() { 
         return ( 
-       <div className="container">
-           <div className="row">
-           <div className="col">
-       <div className="card">
-       
+         
+       <div className="mycontainer">
+    
+       <div className="card"> 
       <div className="card-body">
       <h1 className="card-text">{this.props.name}</h1>
       </div>
@@ -22,8 +22,9 @@ class Offers extends Component {
       </div>
        </div>
        </div>
-       </div>
-       </div>
+      
+    
+       
          );
     }
 }

@@ -5,8 +5,7 @@ import Offers from './components/offers/Offers'
 import data from './components/data/data'
 import './App.css';
 import './components/offers/style.css'
-import Search from './components/offers/Search'
-
+import Offer from './components/offers/Offer'
 class App extends React.Component {
   componentDidMount(){
     // here we will fitch data from API , or our backend 
@@ -16,6 +15,14 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
+        <Route exact path='/:id' render={(props) => {
+        const id = props.match.params.id
+      let ourdata = data.data.filter(data => data.id === id)
+       return (
+       <Offer
+       ourdata={data.data[id]}
+       />
+      )}}/>
       <Route exact path='/' render={() => (
         <div>
           {data.data.map(offer => (

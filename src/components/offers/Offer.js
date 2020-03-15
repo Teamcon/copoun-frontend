@@ -27,6 +27,7 @@ class Offer extends Component{
   <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
   
   <label className="form-check-label" for="exampleRadios1">
+  
   Now {this.props.ourdata.price-this.props.ourdata.discount} Sar
   </label>
   

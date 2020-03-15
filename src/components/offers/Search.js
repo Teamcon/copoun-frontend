@@ -10,13 +10,12 @@ return(
     <div>
         <input
         type="Text"
-        placeholder="find your offer"
-        value={searchItem}
-        onChange={handleChange}/>
+        placeholder="find your offer"></input>
+       
         
         
         
-    </div>
+</div>
 )
 
 

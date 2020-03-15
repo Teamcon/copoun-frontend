@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import style from './style.css'
-import { Container, Row, Col } from 'reactstrap';
+//import { Container, Row, Col } from 'reactstrap';
 
 
 class Offers extends Component {

@@ -1,17 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
 import {connect} from "react-redux"
-// import {Link} from 'react-router-dom'
-// import Offers from './components/offers/Offers'
-// import data from './components/data/data'
+import {Link} from 'react-router-dom'
+import Offers from './components/offers/Offers'
+import data from './components/data/data'
 import './App.css';
 import './components/offers/style.css'
-// import Offer from './components/offers/Offer'
+import Offer from './components/offers/Offer'
 // import User_account from './components/user_account/User_account'
 import {withRouter} from 'react-router-dom'
 // import { useHistory } from 'react-router-dom';
 // import { Button, Card, CardBody, CardGroup, Col, Container, Input, InputGroup, InputGroupAddon, InputGroupText, Row, NavLink  } from 'reactstrap';
 import Banner from './components/banner/Banner'
+// import Slider from './components/banner/Cards'
 import Navbar from './components/navbar/Navbar'
 
 class App extends React.Component {
@@ -21,7 +22,7 @@ class App extends React.Component {
     this.props.setCopons(arrOffers)//here we are passing the array, to the setOffers function
   }
   render(){
-   
+
     return (
       <div className="App">  
     {/* <div>
@@ -33,14 +34,32 @@ class App extends React.Component {
         <User_account/>
         )}
       /> */}
-        {/* <Route exact path='/' render ={()=>(        
-        <Banner/>
+        <Route exact path='/' render ={()=>(        
+        <Banner />
         )}
-      />         */}
+      />        
       <Route exact path='/' render ={()=>(        
         <Navbar/>
         )}
-      />      
+      />   
+           <Route exact path='/' render={() => (
+        <div>
+          {data.data.map(offer =>
+         offer.category == this.props.filter || this.props.filter == "all" ?
+        //  console.log(this.props.filter + " ||" + offer.category)
+          (
+            <Offers
+              key={offer.id}
+              name={offer.name}
+              price={offer.price}
+              img={offer.img}
+              id={offer.id}
+              discount={offer.discount}
+            />
+          ):console.log("no results"))}
+        </div>
+           )}
+          />   
       {/* <Route exact path='/:id' render={(props) => {
         const id = props.match.params.id
       let ourdata = data.data.filter(data => data.id === id)
@@ -70,7 +89,8 @@ class App extends React.Component {
 }
 const getState = state =>{// here we are getting the data from our redux and save it in the variable (offerss)
   return{
-    offerss:state.offerss //to get the data we just write ( this.props.offerss )
+    offerss:state.offerss, //to get the data we just write ( this.props.offerss )
+    filter:state.filter
   }
 }
 const setState = dispatch =>{// here we are setting the data that we fitched from the API , and store it in the state

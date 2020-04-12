@@ -14,6 +14,9 @@ import {withRouter} from 'react-router-dom'
 import Banner from './components/banner/Banner'
 // import Slider from './components/banner/Cards'
 import Navbar from './components/navbar/Navbar'
+import Header from './components/header/Header'
+import MyAccount from './components/user_account/MyAccount'
+
 
 class App extends React.Component {
   componentDidMount(){
@@ -34,6 +37,10 @@ class App extends React.Component {
         <User_account/>
         )}
       /> */}
+         <Route  path='/' render ={()=>(        
+        <Header />
+        )}
+      />  
         <Route exact path='/' render ={()=>(        
         <Banner />
         )}
@@ -59,7 +66,12 @@ class App extends React.Component {
           ):console.log("no results"))}
         </div>
            )}
-          />   
+          /> 
+
+           <Route path='/my-account' render ={()=>(        
+        <MyAccount />
+        )}
+      />    
       {/* <Route exact path='/:id' render={(props) => {
         const id = props.match.params.id
       let ourdata = data.data.filter(data => data.id === id)

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Carousel, CarouselItem} from 'react-bootstrap'
 import CarouselCaption from 'react-bootstrap/CarouselCaption';
 import Cards from './Cards'
-import style from './style.css'
+import './style.css'
 
 
 

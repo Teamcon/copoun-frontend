@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import connect from 'redux'
-
+import {connect} from "react-redux"
+import './style.css'
+import {withRouter} from 'react-router-dom'
 
 
 class OffersHistory extends Component {
@@ -8,10 +9,28 @@ class OffersHistory extends Component {
     render() { 
         return ( 
 
-          this.props.OffersHistory.map(offer =>(
+          // this.props.OffersHistory.map(offer =>(
             //sind data to ticket component
-            <h1>Offers History</h1>
-          ))
+            <React.Fragment>
+              <div class="col-md-10 order-md-1">
+              <h2 class="mb-3">Offers History</h2>
+          <hr class="mb-4"/>
+          <table>
+                <tr>
+                  <th>Offer</th>
+                  <th>Store</th>
+                  <th>Date</th>
+                </tr>
+                <tr>
+                  <td>50% on all products</td>
+                  <td>BR Store</td>
+                  <td>12/08/2019</td>
+                </tr>
+              </table>
+              </div>
+             
+            </React.Fragment>
+          // ))
 
          );
     }
@@ -32,4 +51,4 @@ const getState = state =>{// here we are getting the data from our redux and sav
       }
     }
   }
-export default connect(getState,setState) (OffersHistory);
+export default connect(getState,setState)(withRouter(OffersHistory));

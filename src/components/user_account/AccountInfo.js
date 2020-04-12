@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
+import './style.css'
 
-class User_account extends Component {
+
+class AccountInfo extends Component {
     state = {  }
     render() { 
         return ( 
 
-<div class="col-md-6 order-md-1">
-          <h4 class="mb-3">User Account</h4>
+<div class="col-md-10 order-md-1">
+          <h2 class="mb-3">Account Informations</h2>
           <hr class="mb-4"/>
           {/* ACOUNT INFORMATIONS SECTION */}
-          <h4 class="mb-3">Account Info</h4>
+          <h4 class="mb-3">Basic Info</h4>
           <form class="needs-validation was-validated" novalidate="">
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -209,4 +211,4 @@ class User_account extends Component {
     }
 }
  
-export default withRouter(User_account);
+export default withRouter(AccountInfo);

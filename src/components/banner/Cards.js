@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import style from './style.css'
+import './style.css'
 
 
 
@@ -12,7 +12,7 @@ class Cards extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("http://api.giphy.com/v1/gifs/search?q=Advertisement&api_key=6rnJmKbPBm2t7iaAn7hQfk4muYIKqo1w&limit=5")
+        axios.get("http://api.giphy.com/v1/gifs/search?q=Advertisement&api_key=6rnJmKbPBm2t7iaAn7hQfk4muYIKqo1w&limit=6")
         .then(res =>{
             const data = res.data
             this.setState({BannerData:data.data})

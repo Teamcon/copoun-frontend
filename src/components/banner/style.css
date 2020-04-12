@@ -84,7 +84,7 @@
 
 @keyframes slide {
   0%   {right:0px; top:0px;}
-  50%  {right:750px; top:0px;}
+  50%  {right:850px; top:0px;}
   100% {right:0; top:0px;}
 }
 

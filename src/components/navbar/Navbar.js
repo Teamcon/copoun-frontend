@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux"
+import {Nav,Navbar} from 'react-bootstrap'
 
 
 
 
 
 
-
-class Navbar extends Component {
+class Navbarc extends Component {
     componentDidMount(){
       // here we will fitch data from API , or our backend 
       this.props.setFilterCopons("all")//here we are passing the array, to the setOffers function
@@ -22,44 +22,59 @@ class Navbar extends Component {
       }
    
         return ( 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        //   <Dropdown size="lg" drop="right">
+        //   <Dropdown.Toggle variant="danger" id="dropdown-basic">
+        //     Dropdown Button
+        //   </Dropdown.Toggle>
+        
+        //   <Dropdown.Menu>
+        //     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+        //     <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+        //     <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+        //   </Dropdown.Menu>
+        // </Dropdown>
+
+
+
+            <Navbar bg="danger" variant="light" sticky="top">
   
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav" style={{alignItems:"flex-end"}}>
-    <a class="navbar-brand" href="#"><span style={{fontSize:"14px",color:"rgb(220,20,60)",fontWeight:"800"}} id="all" onClick={filter.bind(this)}>All</span></a>
+    <a class="navbar-brand" href="#"><span style={{fontSize:"14px",color:"rgb(255,255,255)",fontWeight:"800"}} id="all" onClick={filter.bind(this)}>All</span></a>
         <a href="#">
-          <span class="fa fa-car" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="car-services" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(220,20,60)",wordWrap:"normal"}}>cars</span>
+          <span class="fa fa-car" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="car-services" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(255,255,255)",wordWrap:"normal"}}>cars</span>
         </a>
         <a href="#">
-          <span class="fa fa-envira" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="heath-and-beauty" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(220,20,60)",wordWrap:"normal"}} >heath&beauty</span>
-        </a>
-
-        <a href="#">
-          <span class="fa fa-medkit" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="medical" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(220,20,60)"}} >medical</span>
+          <span class="fa fa-envira" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="heath-and-beauty" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(255,255,255)",wordWrap:"normal"}} >heath&beauty</span>
         </a>
 
         <a href="#">
-          <span class="	fa fa-plane" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="tourism" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(220,20,60)"}} >tourism</span>
+          <span class="fa fa-medkit" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="medical" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(255,255,255)"}} >medical</span>
         </a>
 
         <a href="#">
-          <span class="material-icons" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="school-art-supplies" onClick={filter.bind(this)}>brush</span><span style={{fontSize:"14px",color:"rgb(220,20,60)",wordWrap:"normal"}} >school&art</span>
+          <span class="	fa fa-plane" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="tourism" onClick={filter.bind(this)}></span><span style={{fontSize:"14px",color:"rgb(255,255,255)"}} >tourism</span>
         </a>
 
         <a href="#">
-          <span class="material-icons" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="hotels" onClick={filter.bind(this)}>hotel</span><span style={{fontSize:"14px",color:"rgb(220,20,60)"}} >hotels</span>
+          <span class="material-icons" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="school-art-supplies" onClick={filter.bind(this)}>brush</span><span style={{fontSize:"14px",color:"rgb(255,255,255)",wordWrap:"normal"}} >school&art</span>
         </a>
 
         <a href="#">
-          <span class="material-icons" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="cafes" onClick={filter.bind(this)}>local_cafe</span><span style={{fontSize:"14px",color:"rgb(220,20,60)"}} >cafes</span>
+          <span class="material-icons" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="hotels" onClick={filter.bind(this)}>hotel</span><span style={{fontSize:"14px",color:"rgb(255,255,255)"}} >hotels</span>
         </a>
 
         <a href="#">
-          <span class="material-icons" style={{fontSize:"30px",color:"rgb(220,20,60)", margin:"10px 50px"}} id="restaurant" onClick={filter.bind(this)}>local_dining</span><span style={{fontSize:"14px",color:"rgb(220,20,60)"}} >restaurants</span>
+          <span class="material-icons" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="cafes" onClick={filter.bind(this)}>local_cafe</span><span style={{fontSize:"14px",color:"rgb(255,255,255)"}} >cafes</span>
+        </a>
+
+        <a href="#">
+          <span class="material-icons" style={{fontSize:"30px",color:"rgb(255,255,255)", margin:"10px 50px"}} id="restaurant" onClick={filter.bind(this)}>local_dining</span><span style={{fontSize:"14px",color:"rgb(255,255,255)"}} >restaurants</span>
         </a>
     </div>
   </div>
-</nav>
+</Navbar>
          );
     }
 }
@@ -82,4 +97,4 @@ const setState = dispatch =>{// here we are setting the data that we fitched fro
 }
 
   
-export default connect(getState,setState)(Navbar);
+export default connect(getState,setState)(Navbarc);

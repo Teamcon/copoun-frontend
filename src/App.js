@@ -41,14 +41,15 @@ class App extends React.Component {
         <Header />
         )}
       />  
+       <Route exact path='/' render ={()=>(        
+        <Navbar/>
+        )}
+      />   
         <Route exact path='/' render ={()=>(        
         <Banner />
         )}
       />        
-      <Route exact path='/' render ={()=>(        
-        <Navbar/>
-        )}
-      />   
+     
            <Route exact path='/' render={() => (
         <div>
           {data.data.map(offer =>

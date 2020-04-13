@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Carousel from 'react-image-carousel';
 import style from'./style.css'
+import {withRouter} from 'react-router-dom'
 
 class Offer extends Component{
     
@@ -43,4 +44,4 @@ class Offer extends Component{
     }
 }
  
-export default Offer;
+export default withRouter(Offer);

@@ -1,6 +1,8 @@
 const initialState ={
     //here we declare the variables that we wants to contain the data that we will send to it from the app.js file or the components
-    offers:[]
+    offers:[],
+    offersHistory:[],
+    filter:"all"
 }
 
 const rootReducer = (state=initialState, action) => {
@@ -11,7 +13,16 @@ const rootReducer = (state=initialState, action) => {
                 ...state,
                 offers:action.value
             }
-    
+        case "SET_FILTER_OFFERS":
+            return{
+                ...state,
+                filter:action.value
+            }
+        case "SET_OFFERS_HISTORY":
+            return{
+                ...state,
+                offersHistory:action.value
+            }
         default:
             return state;
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './style.css'
 import { Link } from 'react-router-dom'
-
+import {withRouter} from 'react-router-dom'
 
 class Offers extends Component {
     
@@ -30,4 +30,4 @@ class Offers extends Component {
     }
 }
  
-export default Offers;
+export default withRouter (Offers);

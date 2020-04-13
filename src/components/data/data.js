@@ -7,7 +7,7 @@ const offersData ={
         "img":["https://d1ralsognjng37.cloudfront.net/65ee82df-6c88-4284-8d36-7c104def6c46.jpeg",'https://imagecdn.pizzahut.me/azure/yum-resources/82e0a3d5-7658-461d-b6fa-866e9dd37ce6/Images/userimages/triple-offer-bottom-1080x540-en.jpg?height=300&width=600&builder=freeimage'],
         "price":150,
         "discount":10,
-        "category":"resturant"
+        "category":"restaurant"
 
     },
     {
@@ -16,7 +16,7 @@ const offersData ={
         "img":["https://media-cdn.tripadvisor.com/media/photo-s/0a/31/6a/8d/front.jpg"],
         "price":150,
         "discount":10,
-        "category":"resturant"
+        "category":"restaurant"
         
     },
     {
@@ -25,7 +25,7 @@ const offersData ={
         "img":["https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT2hmXg-i-GGciWaYNIESRKlUeR1SykQDPbxiHcAZO6lopqoDAL"],
         "price":150,
         "discount":10,
-        "category":"resturant"
+        "category":"restaurant"
         
     },
     {

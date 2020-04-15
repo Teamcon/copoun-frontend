@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
 import Carousel from 'react-image-carousel';
-import style from'./style.css'
-import {withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import './style.css'
 
 class Offer extends Component{
+  
     
-    render() { 
+  render() { 
 
-       const img=this.props.ourdata.img
+       
+    const img=this.props.ourdata.img
        
         return (
             <div className="container">
-                <div className="card">
+        <div>        <div className="mycard">
     <p>offer </p>
+    </div>
    <div className="card-body">
    <h1 className="card-text">{this.props.ourdata.name}</h1>
    <div className="my-carousel">
             <Carousel images={img} 
-                        thumb={true}
+                        thumb={false}
                         loop={true}
                         autoplay={5000}/></div>
    
    <hr/>
-   <div className="card-body">
+   <div className="card-body mycard">
    <p className="card-text"> offer price:<span className="line">{this.props.ourdata.price}</span> Sar</p>
    <div className="form-check">
   <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" />
   
-  <label className="form-check-label" for="exampleRadios1">
-  
+  <label className="form-check-label" htmlFor="exampleRadios1">
   Now {this.props.ourdata.price-this.props.ourdata.discount} Sar
   </label>
   
 </div>
      
-     <button className="btn btn-secondary">Buy </button>
+     <Link to ={`/${this.props.ourdata.id}/coupon`}>buy</Link>
    </div>
     </div>
     </div>
@@ -44,4 +46,4 @@ class Offer extends Component{
     }
 }
  
-export default withRouter(Offer);
+export default Offer;

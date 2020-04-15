@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
-import style from './style.css'
-import { Link } from 'react-router-dom'
+import './style.css';
+import { Link } from 'react-router-dom';
 import {withRouter} from 'react-router-dom'
+import Offer from './Offer'
+import { Route } from 'react-router-dom'
+
 
 class Offers extends Component {
-    
+  
     render() { 
+        
+      
         return ( 
          
-          <div className="mycontainer" key={this.props.id}>
-          <Link to={`/${this.props.id}`}>
-    
-       <div className="card"> 
-      <div className="card-body">
-      <h1 className="card-text">{this.props.name}</h1>
-      </div>
-      <img src={this.props.img[0]}/>
-      <hr/>
-      <div className="card-body">
-      <p className="card-text"> offer price:<span className="line">{this.props.price}</span> Sar</p>
-        <p>Now {this.props.price-this.props.discount} Sar</p>
-      </div>
-       </div></Link>
-       </div>
-      
-    
+       <div className="mycontainer" key={this.props.offer.id}>
+         
+        
        
+      <div className="card-body">
+      <div className="pic">
+      <img src={this.props.offer.img[0]} alt=""/>
+      </div>
+      <div className="card-text">
+      <Link to={`/${this.props.offer.id}`}><p>{this.props.offer.name}</p></Link>
+      </div>
+      <div>
+      <p> offer price:<span className="line">{this.props.offer.price}</span> Sar</p>
+        <p>Now {this.props.offer.price-this.props.offer.discount} Sar</p></div>
+      
+    </div><br/>
+    </div>
+      
          );
     }
 }

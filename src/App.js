@@ -16,7 +16,8 @@ import Banner from './components/banner/Banner'
 import Navbar from './components/navbar/Navbar'
 import Header from './components/header/Header'
 import MyAccount from './components/user_account/MyAccount'
-
+import Coupon from './components/Coupon/Coupon'
+import AllOffers from './components/offers/AllOffers'
 
 class App extends React.Component {
   componentDidMount(){
@@ -45,12 +46,12 @@ class App extends React.Component {
         <Navbar/>
         )}
       />   
-        <Route exact path='/' render ={()=>(        
+        {/* <Route exact path='/' render ={()=>(        
         <Banner />
         )}
-      />        
+      />         */}
      
-           <Route exact path='/' render={() => (
+           {/* <Route exact path='/' render={() => (
         <div>
           {data.data.map(offer =>
          offer.category == this.props.filter || this.props.filter == "all" ?
@@ -67,35 +68,35 @@ class App extends React.Component {
           ):console.log("no results"))}
         </div>
            )}
-          /> 
+          />  */}
 
-           <Route path='/my-account' render ={()=>(        
-        <MyAccount />
+           <Route   path='/my-account' render ={()=>(        
+        <MyAccount/>
         )}
-      />    
-      {/* <Route exact path='/:id' render={(props) => {
+      /> 
+       
+                        
+                         
+       <Route exact path='/:id' render={(props) => {
         const id = props.match.params.id
-      let ourdata = data.data.filter(data => data.id === id)
+      let ourdata = data.data.find(data => data.id === id)
        return (
        <Offer
        ourdata={data.data[id]}
        />
       )}}/>
+
       <Route exact path='/' render={() => (
-        <div>
-          {data.data.map(offer => (
-            <Offers
-              key={offer.id}
-              name={offer.name}
-              price={offer.price}
-              img={offer.img}
-              id={offer.id}
-              discount={offer.discount}
-            />
-          ))}
-        </div>
-      )}
-      />*/}
+      <div className="offer">
+        <AllOffers
+            alldata={data}/>
+         
+       </div>)}/>
+       <Route exact path='/:id/coupon' render={(props)=>{
+       const id = props.match.params.id
+      return(
+      <Coupon ourdata={data.data[id]}/>)}}/>
+      
       </div> 
     );
   }
